@@ -1,0 +1,43 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorBackground</item>
+    </style>
+
+    <style name="startButton">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">@drawable/bg_light</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textColor">#000</item>
+        <item name="android:layout_margin">30dp</item>
+    </style>
+
+    <style name="MSwitch" >
+        <item name="android:thumb">@drawable/switch_thumb</item>
+        <item name="track">@drawable/switch_track</item>
+        <item name="showText">true</item>
+        <item name="android:textOn">Help On</item>
+        <item name="android:textOff">Help Off</item>
+    </style>
+
+    <style name="ListItemStyle" parent="Theme.AppCompat">
+        <item name="cardElevation">10dp</item>
+        <item name="cardCornerRadius">10dp</item>
+        <item name="cardBackgroundColor">@color/colorPrimary</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_margin">5dp</item>
+    </style>
+
+    <style name="LetterStyle">
+
+    </style>
+
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LetteredView">
+
+        <attr name="selectedBoxHeight" format="dimension" />
+        <attr name="selectedBoxMaxWidth" format="dimension" />
+        <attr name="selectedBoxColor" format="color" />
+        <attr name="selectedBoxMargin" format="dimension" />
+        <attr name="selectedBoxMaxHeight" format="dimension"/>
+        <attr name="selectedBoxMaxLines" format="integer" />
+        <attr name="choicesBoxHeight" format="dimension"/>
+        <attr name="choicesBoxWidth" format="dimension" />
+        <attr name="choicesBoxColor" format="color" />
+        <attr name="choicesBoxHorizontalMargin" format="dimension"/>
+        <attr name="choicesBoxVerticalMargin" format="dimension" />
+
+        <attr name="marginBetween" format="dimension"/>
+
+        <attr name="correctHelpColor" format="color"/>
+        <attr name="incorrectHelpColor" format="color" />
+        <attr name="help" format="boolean"/>
+
+        <attr name="boxElevation"  format="dimension"/>
+        <attr name="spaceBetweenLayouts" format="dimension"/>
+
+        <attr name="bottomMargin" format="dimension"/>
+
+    </declare-styleable>
+
+</resources>

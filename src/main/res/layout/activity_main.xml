@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/mainLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jordan.trivialibrary.TriviaActivity"
+    >
+
+
+
+    <android.support.design.widget.AppBarLayout
+        android:background="@color/colorAppbar"
+        android:id="@+id/mAppbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/appbarHeight">
+
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/headerTV"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+            />
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <FrameLayout
+        app:layout_behavior="com.example.jordan.basicslibrary.Utilities.ScrollingBehaviors.FixScrollingFooterBehavior"
+        android:id="@+id/mContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/bottomBar"
+        android:visibility="gone"
+        android:background="@color/colorBottomBar"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/helpSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:switchMinWidth="100dp"
+                style="@style/MSwitch"
+                android:layout_gravity="center_horizontal"
+            />
+
+    </android.support.v7.widget.Toolbar>
+
+
+</android.support.design.widget.CoordinatorLayout>

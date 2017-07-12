@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_marginBottom="100dp"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_alignParentTop="true"
+        android:id="@+id/imageContainerLO"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_height="250dp">
+
+        <ImageView
+            android:id="@+id/itemIMG"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+        />
+
+    </LinearLayout>
+
+
+        <com.example.jordan.trivialibrary.LetteredView.LetteredView
+            android:id="@+id/mLetteredView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:selectedBoxMaxWidth="40dp"
+            app:selectedBoxMaxHeight="40dp"
+            app:choicesBoxHeight="40dp"
+            app:choicesBoxWidth="35dp"
+            app:selectedBoxColor="#fff"
+            app:selectedBoxMaxLines="2"
+            app:spaceBetweenLayouts="30dp"
+            app:bottomMargin="80dp"
+            app:choicesBoxColor="#aa81f494"
+            app:choicesBoxHorizontalMargin="1dp"
+            app:choicesBoxVerticalMargin="4dp"
+            app:boxElevation="5dp"
+            android:layout_below="@+id/imageContainerLO"
+        >
+
+        </com.example.jordan.trivialibrary.LetteredView.LetteredView>
+
+
+</RelativeLayout>

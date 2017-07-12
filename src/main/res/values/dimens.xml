@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="mCardElevation">10dp</dimen>
+    <dimen name="mBorderRadius">5dp</dimen>
+    <dimen name="mSmallText">12dp</dimen>
+    <dimen name="mMediumText">18dp</dimen>
+    <dimen name="mLargeText">30dp</dimen>
+
+    <dimen name="mediumCardSize">125dp</dimen>
+    <dimen name="largeCardSize">150dp</dimen>
+    <dimen name="cardBottom">30dp</dimen>
+
+    <dimen name="mToolbarHeight">50dp</dimen>
+    <dimen name="btnWidth">200dp</dimen>
+
+    <dimen name="mMargin">30dp</dimen>
+
+    <dimen name="appbarHeight">50dp</dimen>
+
+    <!-- logo dimension -->
+    <dimen name="logoWidth">300dp</dimen>
+    <dimen name="logoHeight">75dp</dimen>
+    <dimen name="logoSpacing">30dp</dimen>
+
+    <!-- main image -->
+    <dimen name="mainImageWidth">300dp</dimen>
+    <dimen name="mainImageHeight">300dp</dimen>
+
+
+    <!-- dimens for card_pick_level -->
+    <dimen name="cardHeight">75dp</dimen>
+    <dimen name="cardLabelTextSize" >16dp </dimen>
+
+</resources>

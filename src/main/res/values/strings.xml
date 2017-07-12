@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="app_name">Dino Trivia</string>
+
+    <string name="mainBtn1Txt">Start</string>
+
+    <string name="mainBtn2Txt">High Score</string>
+
+    <string name="mainBtn3Txt">Try Flashcards</string>
+
+    <string name="helpSwitchTxt"> Help </string>
+
+    <string name="listItemTitle">Pack</string>
+</resources>
