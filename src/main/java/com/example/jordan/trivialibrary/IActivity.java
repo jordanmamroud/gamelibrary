@@ -21,4 +21,5 @@ public interface IActivity {
     ArrayList<String> getCompletedItems();
     ArrayList<Pack> getPacksList();
     void saveCompletedItemAttempt(TriviaItem triviaItem);
+
 }

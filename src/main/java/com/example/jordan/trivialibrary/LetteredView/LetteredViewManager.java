@@ -95,6 +95,8 @@ public class LetteredViewManager {
         int width = 0;
         int availableSpace;
 
+
+
         // checking if num is even and adjusting available space because with flexboxlayout it will wrap odd to next line instead of shrinking other views (idk why but this fixes the problem)
         availableSpace = MHelper.isNumEven(letters.length) ? layoutWidth * selectedBoxMaxLines : layoutWidth * selectedBoxMaxLines - (layoutWidth * selectedBoxMaxLines / letters.length);
 
@@ -113,9 +115,10 @@ public class LetteredViewManager {
 
             // use this one to increase box size to force to next line
             return (layoutWidth + width * minBoxesOnLine )    /  letters.length ;
-        }
+        }else {
 
-        return width ;
+            return width;
+        }
     }
 
 

@@ -47,6 +47,7 @@ public class TriviaFragment extends Fragment implements IPagerItemFragment , Obs
 
     @Override
     public Fragment newInstance(Object object, int position) {
+        System.out.println("created");
         TriviaFragment triviaFragment = new TriviaFragment();
         triviaFragment.setItem(object, position);
         return triviaFragment;
@@ -63,7 +64,6 @@ public class TriviaFragment extends Fragment implements IPagerItemFragment , Obs
         v = inflater.inflate(R.layout.fragment_trivia, container, false);
         iActivity = (IActivity) getActivity();
 
-//        iActivity.animateBottomBar();
         if (savedInstanceState != null) {
             triviaItem = (TriviaItem) savedInstanceState.getSerializable("TRIVIA_ITEM");
         }
@@ -132,19 +132,20 @@ public class TriviaFragment extends Fragment implements IPagerItemFragment , Obs
                 public void run() {
                     ArrayList<String> shuffledList = new ArrayList<String>(Arrays.asList(mLetteredView.getLetters()));
                     Collections.shuffle(shuffledList);
-
                     for (int i = 0; i < shuffledList.size(); i++) {
                           mLetteredView.addLetterViews(shuffledList.get(i), i);
                     }
-                    ((TriviaActivity) getActivity()).animateBottomBar( true );
+
+                    // doing this in background because makes for smoother transition.
+                    iActivity.animateBottomBar( true );
                 }
             });
 
             return null;
-
         }
 
         protected void onPostExecute(Void result) {
+
         }
     }
 }

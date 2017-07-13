@@ -123,23 +123,25 @@ public class LetteredView extends LinearLayout implements LetteredViewManager.IL
     public void init(Context context ){
         this.context = context;
         manager = new LetteredViewManager(this);
+        layoutWidth = MHelper.getDeviceWidth(context);
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.cv_lettered, this);
-
         selectedLO = (FlexboxLayout) findViewById(R.id.selectedLettersLO ) ;
         choicesLO = (FlexboxLayout) findViewById(R.id.allLettersLO);
-    }
 
+//        System.out.println("?" + layoutWidth);
+//        setupMeasurements(layoutWidth);
+//        updateParams();
+    }
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         super.onLayout(changed, l, t, r, b);
         layoutWidth = getMeasuredWidth() ;
-        // checking to make sure that views are not being added multiple times because on layout gets called muliple times
-        if(selectedLO.getChildCount() < letters.length || changed   ) {
-            setupMeasurements(layoutWidth);
-        }
+//         checking to make sure that views are not being added multiple times because on layout gets called muliple times
+//        setupMeasurements(layoutWidth);
+
     }
 
     public void setAnswer(String answer) {
@@ -148,23 +150,37 @@ public class LetteredView extends LinearLayout implements LetteredViewManager.IL
     }
 
     public void addLetterViews(String letter , int pos){
-            createChoiceTV(letter , pos);
+        // sets up measurements in time for adding of textviews , doing before we must worry about view lifecycle.
+
+        if(choicesLO.getChildCount() < letters.length) {
+            if (pos == 0){
+                setupMeasurements(layoutWidth);
+            }
+            createChoiceTV(letter, pos);
             createSelectedTV(pos);
+            // updating params after all views have been added .
+            if (pos == letters.length -1){
+                updateParams();
+            }
+        }
+
     }
 
     public void setupMeasurements(int layoutWidth){
         this.selectedTVWidth = manager.calculateSelectedBoxWidth(  layoutWidth   ) ;
         this.selectedTVHeight = manager.calculateSelectedBoxHeight( layoutWidth  ) ;
+        this.choicesTVWidth = manager.calculateChoicesBoxWidth(layoutWidth);
+    }
 
+    public void updateParams(){
         RelativeLayout.LayoutParams params =  (RelativeLayout.LayoutParams) choicesLO.getLayoutParams();
         params.height = manager.calculateChoicesBoxHeight();
         params.topMargin = spaceBetweenLayouts ;
         params.bottomMargin = bottomMargin ;
 
-        this.choicesTVWidth = manager.calculateChoicesBoxWidth(layoutWidth);
-
         // must be done after calculating box width
         choicesLO.getLayoutParams().width = manager.calculateChoicesLOWidth() ;
+        choicesLO.setLayoutParams(params);
     }
 
     public void createChoiceTV(String l , int pos){
@@ -186,6 +202,7 @@ public class LetteredView extends LinearLayout implements LetteredViewManager.IL
         TextView textView = createTextView(params, position, Color.BLACK, R.drawable.bg_rounded, selectedBoxColor);
         textView.setText("");
         textView.setOnClickListener(v -> onAnswerBoxSelected(   textView, position  ));
+
         selectedLO.addView(textView);
     }
 

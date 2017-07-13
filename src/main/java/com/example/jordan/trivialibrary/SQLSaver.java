@@ -70,7 +70,7 @@ public class SQLSaver extends SQLiteOpenHelper {
             do {
                 // dinosaur name is in column 1;
                allcompleted.add(    cursor.getString(1) );
-                System.out.println(cursor.getString(2));
+
             } while (cursor.moveToNext());
         }
 

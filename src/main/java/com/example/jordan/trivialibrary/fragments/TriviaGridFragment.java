@@ -25,7 +25,9 @@ public class TriviaGridFragment extends GridViewFragment {
         super.onViewCreated(view, savedInstanceState);
 
         iActivity = (IActivity) getActivity();
+
         iActivity.animateBottomBar( false    );
+
         IAdapterDelegates delegate = new TriviaListDelegate(getContext(), iActivity.getCompletedItems());
 
         setGridViewAdapter( new GridViewAdapter( getContext()  ,  iActivity.getList() , delegate    ));

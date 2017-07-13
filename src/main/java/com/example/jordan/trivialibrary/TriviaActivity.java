@@ -1,5 +1,6 @@
 package com.example.jordan.trivialibrary;
 
+import android.animation.ObjectAnimator;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.design.widget.CoordinatorLayout;
@@ -8,14 +9,17 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SwitchCompat;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
 import Animations.ViewAnimations.MAnimator;
+
+import com.daimajia.androidanimations.library.BaseViewAnimator;
 import com.example.jordan.basicslibrary.Utilities.Utils.MHelper;
 import com.example.jordan.trivialibrary.fragments.TriviaFragment;
 import com.example.jordan.trivialibrary.fragments.TriviaGridFragment;
@@ -35,7 +39,7 @@ public class TriviaActivity extends AppCompatActivity implements IActivity, IMvp
 
     private static String PREF_HELP_ON_KEY = "switchkey";
 
-    private Toolbar bottomBar ;
+    private LinearLayout bottomBar ;
     private FrameLayout mContent ;
     private CustomDialog customDialog ;
     private SwitchCompat helpSwitch ;
@@ -75,9 +79,10 @@ public class TriviaActivity extends AppCompatActivity implements IActivity, IMvp
     public void instantiateView(){
         headerTV = (TextView) findViewById(R.id.headerTV);
         mContent = (FrameLayout) findViewById(R.id.mContent) ;
-        bottomBar = (Toolbar) findViewById(R.id.bottomBar) ;
+        bottomBar = (LinearLayout) findViewById(R.id.bottomBar) ;
         customDialog = new CustomDialog(TriviaActivity.this , R.style.FullScreenDialog  );
         helpSwitch = (  SwitchCompat    ) findViewById(R.id.helpSwitch);
+
     }
 
     public void setupCallbacks(){
